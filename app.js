@@ -12,7 +12,11 @@ dotenv.config();
 
 const app = express();
 
-console.log(process.env.NAME);
+// console.log(process.env.DB_STRING);
+
+const db = require('./helpers/db')();
+
+// console.log(process.env.NAME);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
