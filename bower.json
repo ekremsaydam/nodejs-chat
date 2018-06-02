@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-chat",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ekremsaydam <30255407+ekremsaydam@users.noreply.github.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ekremsaydam/nodejs-chat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.0"
+  }
+}

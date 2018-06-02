@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    block stylesheets
+      link(href='/stylesheets/style.css', rel='stylesheet')
+  body
+    div(ng-app="nodejschat",ng-cloak)
+      block content
+
+
+
+
+
+  block javascipts
+    script(src="/angular/angular.min.js")
+    script(src="/javascripts/main.js")
