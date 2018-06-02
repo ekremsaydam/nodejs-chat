@@ -17,7 +17,11 @@ const app = express();
 
 // console.log(process.env.DB_STRING);
 
+// helpers
 const db = require('./helpers/db')();
+
+//middlewares
+const isAuthenticated = require('./middleware/isAuthenticated');
 
 // console.log(process.env.NAME);
 
@@ -40,7 +44,8 @@ app.use(session({
   secret: process.env.SESSION_SECRET_KEY,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true, maxAge: 14 * 24 * 3600000 }
+  cookie: { maxAge: 14 * 24 * 3600000 }
+  // cookie: { secure: true, maxAge: 14 * 24 * 3600000 }
 }));
 
 // passport.js
@@ -49,7 +54,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/auth', auth);
-app.use('/chat', chat);
+app.use('/chat', isAuthenticated, chat);
 
 
 // catch 404 and forward to error handler

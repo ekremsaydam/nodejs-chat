@@ -2,11 +2,11 @@ extends layout
 
 append stylesheets
   link(href="/stylesheets/chat.css", rel="stylesheet")
-  
+
 
 block content
   div(ng-controller="chatController")
-    | chat
+    h1 #{user.name} #{user.surname}
 
   append javascipts
     script(src="/javascripts/controller/chatController.js")
